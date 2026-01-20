@@ -19,7 +19,10 @@ param(
     [switch]$SkipGitConfig,
     
     [Parameter(HelpMessage = "Skip repository cloning")]
-    [switch]$SkipRepoClone
+    [switch]$SkipRepoClone,
+    
+    [Parameter(HelpMessage = "Git repository workspace directory")]
+    [string]$GitWorkspaceDirectory = "$env:USERPROFILE\git"
 )
 
 # Error handling
@@ -195,12 +198,8 @@ if (-not $SkipRepoClone) {
     try {
         git --version 2>$null | Out-Null
         if ($LASTEXITCODE -eq 0) {
-            # Prompt for workspace directory
-            $defaultWorkspace = "$env:USERPROFILE\git"
-            $workspace = Read-Host "Enter workspace directory for repositories (default: $defaultWorkspace)"
-            if (-not $workspace) {
-                $workspace = $defaultWorkspace
-            }
+            # Use the workspace directory from parameter
+            $workspace = $GitWorkspaceDirectory
             
             # Validate workspace path
             try {
@@ -229,8 +228,8 @@ if (-not $SkipRepoClone) {
                 
             } catch {
                 Write-Host "[ERROR] Invalid workspace path: $_" -ForegroundColor Red
-                Write-Host "Using default workspace: $defaultWorkspace" -ForegroundColor Yellow
-                $workspace = $defaultWorkspace
+                Write-Host "Using default workspace: $GitWorkspaceDirectory" -ForegroundColor Yellow
+                $workspace = $GitWorkspaceDirectory
             }
             
             # Create workspace directory if it doesn't exist

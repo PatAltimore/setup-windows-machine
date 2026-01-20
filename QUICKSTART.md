@@ -34,8 +34,8 @@ Before running the script, you can customize the following files as needed:
 The script will:
 1. Install all applications listed in `winget.txt`
 2. Configure Git using settings in `git-config.txt`
-3. Ask where you want to clone repositories
-4. Clone all repositories listed in `repositories.txt` (including upstream remotes for forks)
+3. Clone all repositories listed in `repositories.txt` to `%USERPROFILE%\git` (or a custom directory if specified)
+4. Set up upstream remotes for forked repositories
 
 ## Common Scenarios
 
@@ -52,6 +52,12 @@ The script will:
 ### I already have everything, just clone repos
 ```powershell
 .\setup-windows-machine.ps1 -SkipInstall -SkipGitConfig
+```
+
+### Use a custom directory for repositories
+```powershell
+# Clone repos to D:\MyProjects instead of default %USERPROFILE%\git
+.\setup-windows-machine.ps1 -GitWorkspaceDirectory "D:\MyProjects"
 ```
 
 ## After Installation

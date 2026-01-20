@@ -83,6 +83,16 @@ Skip specific sections using parameters:
 .\setup-windows-machine.ps1 -SkipGitConfig -SkipRepoClone
 ```
 
+Customize the workspace directory for cloned repositories:
+
+```powershell
+# Use a custom workspace directory (default is %USERPROFILE%\git)
+.\setup-windows-machine.ps1 -GitWorkspaceDirectory "D:\Projects"
+
+# Combine with other parameters
+.\setup-windows-machine.ps1 -GitWorkspaceDirectory "C:\Dev" -SkipInstall
+```
+
 ## Troubleshooting
 
 ### Winget Not Found
