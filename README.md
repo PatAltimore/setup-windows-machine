@@ -1,4 +1,4 @@
-# Windows Machine Setup
+# Set Up Windows Machine
 
 Automated Windows machine setup script for fresh installations. This script uses Windows Package Manager (winget) to install essential development tools and applications, configure Git, and clone repositories.
 
