@@ -21,3 +21,7 @@ Microsoft Mouse and Keyboard Center | Microsoft.MouseandKeyboardCenter
 
 # Optional Applications
 Windows App | Microsoft.WindowsApp
+
+# Office
+# Microsoft Office | Microsoft.Office
+# Microsoft Teams | Microsoft.Teams
