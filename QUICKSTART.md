@@ -10,7 +10,7 @@
 1. Press `Win + X` and select "Windows PowerShell (Admin)" or "Terminal (Admin)"
 2. Navigate to the script folder:
    ```powershell
-   cd C:\machine-setup
+   cd C:\setup-windows-machine
    ```
 
 ### Step 3: Review and Customize Configuration Files
