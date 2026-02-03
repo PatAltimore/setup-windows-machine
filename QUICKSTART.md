@@ -4,7 +4,7 @@
 
 ### Step 1: Download the Script
 1. Download or clone this repository to your Windows machine
-2. Extract to a folder (e.g., `C:\machine-setup`)
+2. Extract to a folder (e.g., `C:\setup-windows-machine`)
 
 ### Step 2: Open PowerShell as Administrator
 1. Press `Win + X` and select "Windows PowerShell (Admin)" or "Terminal (Admin)"
